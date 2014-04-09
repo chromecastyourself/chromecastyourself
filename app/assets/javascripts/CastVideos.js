@@ -19,7 +19,7 @@
 /**
  * Media source root URL
  **/
-var MEDIA_SOURCE_ROOT = 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/';
+var MEDIA_SOURCE_ROOT = '';
 
 /**
  * Media source URL JSON

@@ -54,14 +54,13 @@
     {
       "name" : "Movies",
       "videos" : [
-      <%- for movie in Dir.glob("public/movies/*") do %>
-        <% movie.sub! 'public/movies/', '' %>
+      <%- Video.all.each do |video| %>
         {
           "description" : "",
-          "sources" : [ "http://<%= Socket.ip_address_list.detect{|intf| intf.ipv4_private?}.ip_address %>:8080/movies/<%= movie %>" ],
+          "sources" : [ "http://<%= Socket.ip_address_list.detect{|intf| intf.ipv4_private?}.ip_address %>:8080/movies/<%= video.path.identifier! %>" ],
           "subtitle" : "",
-          "thumb" : "images/BigBuckBunny.jpg",
-          "title" : "<%= movie.humanize %>"
+          "thumb" : "http://<%= Socket.ip_address_list.detect{|intf| intf.ipv4_private?}.ip_address %>:8080/thumbs/<%= video.path.identifier!.split('.').first %>_thumb.jpg",
+          "title" : "<%= video.path.identifier!.humanize %>"
         },
       <%- end %>
       ]
