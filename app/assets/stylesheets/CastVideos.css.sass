@@ -1,0 +1,309 @@
+body
+  font-family: "OpenSans", "Verdana", Georgia, Serif
+  background-image: image-url("bg-pattern.png")
+
+.m-header
+  height: 45px
+
+.m-header--brand
+  width: 50%
+  font-size: 20px
+  float: left
+
+.m-header--brand--right
+  width: 50%
+  font-size: 20px
+  float: left
+  text-align: right
+
+.m-video
+  background-image: image-url("bg-pattern-black.png")
+
+.padding
+  padding: 30px 0
+
+h1
+  margin-top: 10px
+
+#main_video
+  float: left
+
+#video_image
+  width: 100%
+  max-height: 641px
+
+#video_image_overlay
+  margin-left: 40px
+  margin-right: 0px
+  margin-top: 0px
+  margin-bottom: 0px
+  width: 960px
+  height: 540px
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 72%, rgba(0, 0, 0, 0) 100%)
+  z-index: 0
+  position: absolute
+  display: none
+
+#video_element
+  display: none
+  width: 100%
+  background-color: #000
+
+#media_info
+  text-align: center
+
+#media_title
+  font-size: 20px
+  font-family: "Open Sans", "Verdana", Georgia, Serif
+  text-align: left
+  color: #fff
+
+#media_subtitle
+  float: left
+  margin: 13px 0px 0px 30px
+  padding: 0px
+  font-size: 18px
+  font-family: 'Roboto', "Open Sans", "Verdana", Georgia, Serif
+
+#media_desc
+  float: left
+  width: 95%
+  margin: 5px
+  font-size: 12px
+  font-family: 'Roboto', "Open Sans", "Verdana", Georgia, Serif
+
+#media_control
+  height: 60px
+  z-index: 1000
+  margin: -60px 0px 0px 0px
+  padding: 0px
+  opacity: 0
+  background-color: #000
+  font-family: 'Roboto', "Open Sans", "Verdana", Georgia, Serif
+  transition: opacity 1s
+  -webkit-transition: opacity 1s
+
+#main_video:hover #media_control
+  opacity: 0.7
+
+#play
+  margin: 10px 20px 10px 10px
+  float: left
+  width: 65px
+  height: 40px
+  background-image: url('../assets/play.png')
+  &:hover
+    background-image: url('../assets/play-hover.png')
+  &:press
+    background-image: url('../assets/play-press.png')
+
+#pause
+  display: none
+  margin: 10px 20px 10px 10px
+  float: left
+  width: 65px
+  height: 40px
+  background-image: url('../assets/pause.png')
+  &:hover
+    background-image: url('../assets/pause-hover.png')
+
+.button
+  margin: 5px
+  font-size: 100%
+  font-family: 'Roboto', "Open Sans", "Verdana", Georgia, Serif
+
+.volume
+  width: 60px
+  margin-left: 8px
+
+#muteText
+  width: 30px
+  margin-left: 3px
+
+.muteButton
+  font-size: 110%
+  font-family: 'Roboto', "Open Sans", "Verdana", Georgia, Serif
+
+.imageIcon
+  padding: 3px 0px 0px 0px
+  width: 25px
+
+#progress
+  margin: 20px 0px 10px -620px
+  float: left
+  width: 1px
+  height: 36px
+  z-index: 10
+  background-image: url('../assets/timeline_bg_progress.png')
+  background-repeat: repeat-x
+
+#progress_indicator
+  margin: 20px 0px 10px -620px
+  float: left
+  draggable: true
+  width: 6px
+  height: 36px
+  z-index: 1000
+  background-image: url('../assets/timeline_indicator.png')
+  background-repeat: repeat-x
+
+#progress_bg
+  margin: 20px 20px 10px 0px
+  float: left
+  width: 600px
+  height: 36px
+  background-image: url('../assets/timeline_bg_track.png')
+  background-repeat: repeat-x
+
+#casticonactive
+  float: right
+  margin: 10px 17px 14px 0px
+  width: 32px
+  height: 32px
+  display: none
+  background-image: url('../assets/ic_media_route_on_custom.png')
+
+#casticonidle
+  float: right
+  width: 32px
+  height: 32px
+  margin: 10px 17px 14px 0px
+  display: block
+  background-image: url('../assets/ic_media_route_off_custom.png')
+
+#audio_off
+  float: right
+  margin: 10px 10px 10px 0px
+  width: 32px
+  height: 32px
+  display: none
+  background-image: url('../assets/audio_off.png')
+
+#audio_on
+  float: right
+  width: 32px
+  height: 32px
+  margin: 10px 10px 10px 0px
+  display: block
+  background-image: url('../assets/audio_on.png')
+
+#audio_bg
+  float: right
+  opacity: 0.1
+  width: 41px
+  height: 124px
+  margin: -115px 8px -10px 0px
+  display: block
+  background-image: url('../assets/audio_bg.png')
+  position: relative
+  z-index: 10
+
+#audio_bg_track
+  float: right
+  opacity: 0.0
+  width: 16px
+  height: 100px
+  margin: -100px 20px -30px 0px
+  display: block
+  background-image: url('../assets/audio_bg_track.png')
+  position: relative
+  z-index: 1000
+
+#audio_indicator
+  float: right
+  opacity: 0.0
+  width: 16px
+  height: 5px
+  margin: -50px 20px -30px 0px
+  display: none
+  background-image: url('../assets/audio_indicator.png')
+  position: relative
+  z-index: 1000
+
+#audio_bg_level
+  float: right
+  opacity: 0.0
+  width: 16px
+  height: 50px
+  margin: -50px 20px -30px 0px
+  display: block
+  background-image: url('../assets/audio_bg_level.png')
+  position: relative
+  z-index: 1000
+
+#fullscreen_expand
+  float: right
+  width: 32px
+  height: 32px
+  margin: 10px 20px 10px 0px
+  display: block
+  background-image: url('../assets/fullscreen_expand.png')
+
+#fullscreen_collapse
+  float: right
+  width: 32px
+  height: 32px
+  margin: 10px 20px 10px 0px
+  display: none
+  background-image: url('../assets/fullscreen_collapse.png')
+
+#duration
+  float: right
+  color: #fff
+  width: 60px
+  height: 32px
+  margin: 20px 15px 10px 15px
+  display: block
+
+div.imageSub
+  position: relative
+  img
+    z-index: 1
+  div
+    position: absolute
+    left: 0%
+    right: 0%
+    bottom: 0px
+    padding: 0px
+    &.blackbg
+      z-index: 2000
+      bottom: 60px
+      left: 300px
+      width: 400px
+      height: 30px
+      color: #000
+      background-color: #000
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"
+      filter: alpha(opacity = 50)
+      opacity: 0.5
+      font-size: 120%
+      display: none
+      padding: 10px
+    &.label
+      z-index: 3000
+      bottom: 60px
+      left: 300px
+      width: 400px
+      height: 30px
+      color: white
+      font-size: 120%
+      display: none
+      padding: 10px
+
+.thumb-p
+  position: absolute
+  height: 30px
+  top: 190px
+  width: 290px
+  background: rgba(0, 0, 0, 0.7)
+  color: white
+  padding: 5px
+  margin: 5px
+
+.thumbnail
+  width: 100%
+  position: absolute
+  height: 230px
+
+.vertical
+  -webkit-transform: rotate(90deg)

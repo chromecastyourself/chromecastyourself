@@ -1,47 +1,52 @@
-<div class="row">
-  <div id="main_video" class="col-lg-12">
-    <div class="imageSub"> <!-- Put Your Image Width -->
-       <div class="blackbg" id="playerstatebg">IDLE</div>
-       <div class=label id="playerstate">IDLE</div>
-       <%= image_tag 'default.jpg', id: 'video_image' %>
-       <div id="video_image_overlay"></div>
-       <video id="video_element">
-       </video>
+<div class="m-video padding">
+  <div class="container">
+    <div class="row">
+      <div id="media_info" class="col-lg-12">
+        <div id="media_title">
+        </div>
+        <div id="media_subtitle">
+        </div>
+        <div id="media_desc">
+        </div>
+      </div>
     </div>
-    <div id="media_control">
-       <div id="play"></div>
-       <div id="pause"></div>
-       <div id="progress_bg"></div>
-       <div id="progress"></div>
-       <div id="progress_indicator"></div>
-       <div id="fullscreen_expand"></div>
-       <div id="fullscreen_collapse"></div>
-       <div id="casticonactive"></div>
-       <div id="casticonidle"></div>
-       <div id="audio_bg"></div>
-       <div id="audio_bg_track"></div>
-       <div id="audio_indicator"></div>
-       <div id="audio_bg_level"></div>
-       <div id="audio_on"></div>
-       <div id="audio_off"></div>
-       <div id="duration">00:00:00</div>
+    <div class="row">
+      <div id="main_video" class="col-lg-12">
+        <div class="imageSub"> <!-- Put Your Image Width -->
+           <div class="blackbg" id="playerstatebg">IDLE</div>
+           <div class=label id="playerstate">IDLE</div>
+           <img src="<%= 'thumbs/' + Video.first.path.identifier!.split('.').first + '_thumb.jpg' %>" alt="" id="video_image">
+           <div id="video_image_overlay"></div>
+           <video id="video_element">
+           </video>
+        </div>
+        <div id="media_control">
+           <div id="play"></div>
+           <div id="pause"></div>
+           <div id="progress_bg"></div>
+           <div id="progress"></div>
+           <div id="progress_indicator"></div>
+           <div id="fullscreen_expand"></div>
+           <div id="fullscreen_collapse"></div>
+           <div id="casticonactive"></div>
+           <div id="casticonidle"></div>
+           <div id="audio_bg"></div>
+           <div id="audio_bg_track"></div>
+           <div id="audio_indicator"></div>
+           <div id="audio_bg_level"></div>
+           <div id="audio_on"></div>
+           <div id="audio_off"></div>
+           <div id="duration">00:00:00</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="row">
-  <div id="media_info" class="col-lg-12">
-    <div id="media_title">
+<div class="container padding">
+  <div class="row">
+    <div id="carousel" class="col.lg-12">
     </div>
-    <div id="media_subtitle">
-    </div>
-    <div id="media_desc">
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div id="carousel" class="col.lg-12">
   </div>
 </div>
 
@@ -54,14 +59,13 @@
     {
       "name" : "Movies",
       "videos" : [
-      <%- for movie in Dir.glob("public/movies/*") do %>
-        <% movie.sub! 'public/movies/', '' %>
+      <%- Video.all.each do |video| %>
         {
           "description" : "",
-          "sources" : [ "http://<%= Socket.ip_address_list.detect{|intf| intf.ipv4_private?}.ip_address %>:8080/movies/<%= movie %>" ],
+          "sources" : [ "http://<%= Socket.ip_address_list.detect{|intf| intf.ipv4_private?}.ip_address %>:8080/movies/<%= video.path.identifier! %>" ],
           "subtitle" : "",
-          "thumb" : "images/BigBuckBunny.jpg",
-          "title" : "<%= movie.humanize %>"
+          "thumb" : "http://<%= Socket.ip_address_list.detect{|intf| intf.ipv4_private?}.ip_address %>:8080/thumbs/<%= video.path.identifier!.split('.').first %>_thumb.jpg",
+          "title" : "<i class='glyphicon glyphicon-film'></i> <%= video.path.identifier!.split('.').first.humanize %>"
         },
       <%- end %>
       ]

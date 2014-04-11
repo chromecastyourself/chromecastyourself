@@ -19,7 +19,7 @@
 /**
  * Media source root URL
  **/
-var MEDIA_SOURCE_ROOT = 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/';
+var MEDIA_SOURCE_ROOT = '';
 
 /**
  * Media source URL JSON
@@ -1031,8 +1031,8 @@ CastPlayer.prototype.onMediaJsonLoad = function(evt) {
     newdiv = document.createElement('div');
     divIdName = 'thumb'+i+'Div';
     newdiv.setAttribute('id',divIdName);
-    newdiv.setAttribute('class','col-lg-3');
-    newdiv.innerHTML = '<img src="' + MEDIA_SOURCE_ROOT + this.mediaContents[i]['thumb'] + '" class="col-lg-3">';
+    newdiv.setAttribute('class','col-md-3');
+    newdiv.innerHTML = '<img src="' + MEDIA_SOURCE_ROOT + this.mediaContents[i]['thumb'] + '" class="col-md-3">';
     newdiv.addEventListener('click', this.selectMedia.bind(this, i));
     ni.appendChild(newdiv);
   }
@@ -1058,8 +1058,8 @@ CastPlayer.prototype.addVideoThumbs = function() {
     newdiv = document.createElement('div');
     divIdName = 'thumb'+i+'Div';
     newdiv.setAttribute('id',divIdName);
-    newdiv.setAttribute('class','col-lg-3');
-    newdiv.innerHTML = '<img src="' + MEDIA_SOURCE_ROOT + this.mediaContents[i]['thumb'] + '" class="thumbnail">';
+    newdiv.setAttribute('class','col-md-3');
+    newdiv.innerHTML = '<img src="' + MEDIA_SOURCE_ROOT + this.mediaContents[i]['thumb'] + '" class="thumbnail"><p class="thumb-p">' + this.mediaContents[i]['title'] + '</p>';
     newdiv.addEventListener('click', this.selectMedia.bind(this, i));
     ni.appendChild(newdiv);
   }
