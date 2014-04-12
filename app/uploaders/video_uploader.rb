@@ -7,7 +7,8 @@ class VideoUploader < CarrierWave::Uploader::Base
   end
 
   def extension_white_list
-    %w(mov flv avi)
+    # %w(mov flv avi)
+    %w(mp4)
   end
 
   def identifier!
