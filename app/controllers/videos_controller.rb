@@ -1,4 +1,8 @@
 class VideosController < ApplicationController
+  def index
+    @videos = Video.all
+  end
+
   def new
     @video = Video.new
   end
@@ -7,8 +11,9 @@ class VideosController < ApplicationController
     @video = Video.new video_params
 
     if @video.save
-      Resque.enqueue(VideoConverterJob, @video.id)
-      redirect_to @video, flash: { success: 'Success!' }
+      FFMPEG::Movie.new(@video.path.path).screenshot("#{Rails.root}/public/thumbs/#{@video.path.identifier!.split('.').first}_thumb.jpg", seek_time: 5)
+      # Resque.enqueue(VideoConverterJob, @video.id)
+      redirect_to videos_path, flash: { success: 'Success!' }
     else
       render 'new'
     end
@@ -17,7 +22,7 @@ class VideosController < ApplicationController
   def destroy
     @video = Video.find_by params[:id]
     @video.destroy
-    redirect_to new_document_path, flash: { success: 'Success!' }
+    redirect_to videos_path, flash: { success: 'Success!' }
   end
 
   def video_params
