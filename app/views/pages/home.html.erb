@@ -15,7 +15,11 @@
         <div class="imageSub"> <!-- Put Your Image Width -->
            <div class="blackbg" id="playerstatebg">IDLE</div>
            <div class=label id="playerstate">IDLE</div>
-           <img src="<%= 'thumbs/' + Video.first.path.identifier!.split('.').first + '_thumb.jpg' %>" alt="" id="video_image">
+            <%- if Video.first %>
+              <img src="<%= 'thumbs/' + Video.first.path.identifier!.split('.').first + '_thumb.jpg' %>" alt="" id="video_image">
+            <%- else %>
+              <h1>Pas de vidéos dans la base !</h1>
+            <%- end %>
            <div id="video_image_overlay"></div>
            <video id="video_element">
            </video>
