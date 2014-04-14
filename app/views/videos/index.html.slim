@@ -1,24 +1,25 @@
-.container.padding
-  .row
-    .col-lg-12
-      h2.padding Manage your videos
-      table.table.table-bordered.table-stripped
-        thead
-          tr
-            th Video
-            th Created at
-            th
-        tbody
-          - @videos.each do |video|
+.m-mainwrapper.padding
+  .container.padding
+    .row
+      .col-lg-12
+        h2.padding.black Manage your videos
+        table.table.table-bordered.table-stripped
+          thead
             tr
-              td
-                img src=('thumbs/' + video.path.identifier!.split('.').first + '_thumb.jpg') style="width:50px"
-                | &nbsp;
-                = video.path.identifier!.split('.').first
-              td= l video.created_at, format: :short
-              td
-                = link_to 'Delete', video, method: :delete, class: 'btn btn-danger', confirm: 'Really?'
-      .col-lg-2
-        = link_to 'Add a video', new_video_path, class: 'btn btn-success'
-      .col-lg-2
-        = link_to 'Back to homepage', root_path, class: 'btn btn-default'
+              th Video
+              th Created at
+              th
+          tbody
+            - @videos.each do |video|
+              tr
+                td
+                  img src=('thumbs/' + video.path.identifier!.split('.').first + '_thumb.jpg') style="width:50px"
+                  | &nbsp;
+                  = video.path.identifier!.split('.').first
+                td= l video.created_at, format: :short
+                td
+                  = link_to 'Delete', video, method: :delete, class: 'btn btn-danger', confirm: 'Really?'
+        .col-lg-2
+          = link_to 'Add a video', new_video_path, class: 'btn btn-success'
+        .col-lg-2
+          = link_to 'Back to homepage', root_path, class: 'btn btn-default'

@@ -12,7 +12,6 @@ class VideosController < ApplicationController
 
     if @video.save
       FFMPEG::Movie.new(@video.path.path).screenshot("#{Rails.root}/public/thumbs/#{@video.path.identifier!.split('.').first}_thumb.jpg", seek_time: 5)
-      # Resque.enqueue(VideoConverterJob, @video.id)
       redirect_to videos_path, flash: { success: 'Success!' }
     else
       render 'new'

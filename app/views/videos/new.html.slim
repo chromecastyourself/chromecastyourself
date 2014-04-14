@@ -1,32 +1,33 @@
-- if flash[:notice] || flash[:success]
-  .container
-    .alert.alert-success.alert-dismissable
-      button.close aria-hidden="true" data-dismiss="alert" type="button"
-      = "#{flash[:notice]} #{flash[:success]}"
-- if flash[:info]
-  .container
-    .alert.alert-info.alert-dismissable
-      button.close aria-hidden="true" data-dismiss="alert" type="button"
-      = flash[:info]
-- if flash[:error]
-  .container
-    .alert.alert-danger.alert-dismissable
-      button.close aria-hidden="true" data-dismiss="alert" type="button"
-      = flash[:error]
+.m-mainwrapper.padding
+  - if flash[:notice] || flash[:success]
+    .container
+      .alert.alert-success.alert-dismissable
+        button.close aria-hidden="true" data-dismiss="alert" type="button"
+        = "#{flash[:notice]} #{flash[:success]}"
+  - if flash[:info]
+    .container
+      .alert.alert-info.alert-dismissable
+        button.close aria-hidden="true" data-dismiss="alert" type="button"
+        = flash[:info]
+  - if flash[:error]
+    .container
+      .alert.alert-danger.alert-dismissable
+        button.close aria-hidden="true" data-dismiss="alert" type="button"
+        = flash[:error]
 
-.container.padding
-  .row.padding
-    .col-lg-12
-      h2 Upload your .mp4 video (this could take up yo 30sec/1min)
-      h5 I am currently working on a avi/flv/mov to mp4 converter, stay tuned !
-  .row.padding
-    = simple_form_for @video  do |f|
-      .col-lg-3
-        = f.file_field :path
-      .col-lg-3
-        = f.submit 'Submit', class: 'btn btn-success'
-  .row
-    .col-lg-2
-      = link_to 'Manage videos', videos_path, class: 'btn btn-default'
-    .col-lg-2
-      = link_to 'Back to homepage', root_path, class: 'btn btn-default'
+  .container.padding
+    .row.padding
+      .col-lg-12
+        h2.black Upload your .mp4 video (this could take up yo 30sec/1min)
+        h5 I am currently working on a avi/flv/mov to mp4 converter, stay tuned !
+    .row.padding
+      = simple_form_for @video  do |f|
+        .col-lg-3
+          = f.file_field :path
+        .col-lg-3
+          = f.submit 'Submit', class: 'btn btn-success'
+    .row
+      .col-lg-2
+        = link_to 'Manage videos', videos_path, class: 'btn btn-default'
+      .col-lg-2
+        = link_to 'Back to homepage', root_path, class: 'btn btn-default'
