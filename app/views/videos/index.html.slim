@@ -1,4 +1,20 @@
 .m-mainwrapper.padding
+  - if flash[:notice] || flash[:success]
+    .container
+      .alert.alert-success.alert-dismissable
+        button.close aria-hidden="true" data-dismiss="alert" type="button"
+        = "#{flash[:notice]} #{flash[:success]}"
+  - if flash[:info]
+    .container
+      .alert.alert-info.alert-dismissable
+        button.close aria-hidden="true" data-dismiss="alert" type="button"
+        = flash[:info]
+  - if flash[:error]
+    .container
+      .alert.alert-danger.alert-dismissable
+        button.close aria-hidden="true" data-dismiss="alert" type="button"
+        = flash[:error]
+
   .container.padding
     .row
       .col-lg-12
