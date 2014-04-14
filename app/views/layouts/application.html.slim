@@ -4,12 +4,11 @@ html
     title Chromecast Yourself
     = favicon_link_tag 'favicon.png', type: 'image/png'
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    link href="//fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic-ext,greek-ext,latin-ext" rel="stylesheet" type="text/css"
-    script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js" type="text/javascript"
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css"
     = csrf_meta_tags
   body
-    .container.m-header
-      h1.m-header--brand Chromecast Yourself
-      h1.m-header--brand--right by Rémi Delhaye
+    header.container.m-header
+      .row
+        .col-lg-12.text-center
+          h1 Chromecast Yourself by Rémi Delhaye
     = yield

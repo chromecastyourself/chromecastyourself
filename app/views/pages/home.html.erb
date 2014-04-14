@@ -1,9 +1,7 @@
 <div class="m-video padding">
-  <div class="container">
+  <div class="container m-video--container">
     <div class="row">
       <div id="media_info" class="col-lg-12">
-        <div id="media_title">
-        </div>
         <div id="media_subtitle">
         </div>
         <div id="media_desc">
@@ -47,15 +45,62 @@
   </div>
 </div>
 
-<div class="container padding">
-  <div class="row">
-    <div class="col-lg-12 padding">
-      <%= link_to 'Manage videos', videos_path, class: 'btn btn-default btn-block' %>
+<div class="m-mainwrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="m-video--under--video">
+          <div class="col-lg-8"><div id="media_title"></div></div>
+          <div class="col-lg-4 m-video--under--video--manage">
+            <%= link_to 'Manage videos', videos_path, class: 'btn-block' %>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="carousel" class="col-lg-12">
+    <div class="row">
+      <div id="carousel" class="col-lg-12">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="m-mainwrapper--footer--top">
+          <h2>Chromecast Yourself</h2>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<footer class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-lg-4 m-footer--container">
+        <h3 class="m-footer--title">Navigation</h3>
+        <p class="m-footer--p">
+          <%= link_to 'Manage videos', videos_path %>
+          <%= link_to 'Add a new video', new_video_path %>
+        </p>
+      </div>
+      <div class="col-lg-4 m-footer--container">
+        <h3 class="m-footer--title">About</h3>
+        <p class="m-footer--p">
+          With <span class="white">Chromecastyourself</span>, you can stream easily all your .mp4 videos on your Google's Chromecast using the power of <span class="white">Ruby on Rails</span>.
+        </p>
+      </div>
+      <div class="col-lg-4 m-footer--container">
+        <h3 class="m-footer--title">Be social</h3>
+        <p class="m-footer--p">
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
+          <a href="#">Github</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js" type="text/javascript">
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
 <script type="text/javascript">
   var CastPlayer = new CastPlayer();

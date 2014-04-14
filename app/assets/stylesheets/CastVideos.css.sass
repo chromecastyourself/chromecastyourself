@@ -1,29 +1,20 @@
 body
   font-family: "OpenSans", "Verdana", Georgia, Serif
-  background-image: image-url("bg-pattern.png")
-
-.m-header
-  height: 45px
-
-.m-header--brand
-  width: 50%
-  font-size: 20px
-  float: left
-
-.m-header--brand--right
-  width: 50%
-  font-size: 20px
-  float: left
-  text-align: right
-
-.m-video
-  background-image: image-url("bg-pattern-black.png")
-
-.padding
-  padding: 30px 0
+  background: image-url("1.jpg") center top
+  background-attachment: fixed
+  -webkit-font-smoothing: antialiased
 
 h1
-  margin-top: 10px
+  font-weight: 300
+  font-size: 16px
+  color: #fff
+  padding: 30px
+
+h2
+  color: #fff
+  font-weight: 300
+  margin: 0
+  font-size: 16px
 
 #main_video
   float: left
@@ -53,10 +44,11 @@ h1
   text-align: center
 
 #media_title
-  font-size: 20px
+  font-size: 24px
   font-family: "Open Sans", "Verdana", Georgia, Serif
   text-align: left
   color: #fff
+  padding: 14px
 
 #media_subtitle
   float: left
@@ -290,21 +282,107 @@ div.imageSub
       display: none
       padding: 10px
 
-.thumb-p
-  position: absolute
-  height: 30px
-  top: 10px
-  left: 10px
-  width: 290px
-  background: rgba(0, 0, 0, 0.7)
-  color: white
-  padding: 5px
-  margin: 5px
+.m-video--container
+  margin-bottom: -6px
 
-.thumbnail
+.m-video--under--video
+  -moz-border-radius: 0px 0px 6px 6px
+  -o-border-radius: 0px 0px 6px 6px
+  -webkit-border-radius: 0px 0px 6px 6px
+  background: #333946
+  border-radius: 0px 0px 6px 6px
+  height: 65px
+
+.m-video--under--video--manage
+  -moz-border-radius: 0px 0px 6px 0px
+  -o-border-radius: 0px 0px 6px 0px
+  -webkit-border-radius: 0px 0px 6px 0px
+  background: #e4545b
+  border-radius: 0px 0px 6px 0px
+  display: block
+  height: 65px
+  overflow: hidden
+  text-align: center
+
+  a
+    text-decoration: none
+    color: #fff
+
+.m-mainwrapper
+  background: #fff
   width: 100%
-  position: absolute
-  height: 230px
+
+.m-mainwrapper--thumb
+  margin-top: 35px
+  cursor: pointer
+
+.m-mainwrapper--thumb:hover .m-mainwrapper--thumb--image
+  margin-left: -50%
+  margin-top: -50%
+  width: 200%
+
+.m-mainwrapper--thumb--image--container
+  height: 100px
+  overflow: hidden
+  width: 100%
+
+.m-mainwrapper--thumb--image
+  width: 100%
+
+.m-mainwrapper--thumb--p
+  -moz-border-radius: 0px 0px 3px 3px
+  -o-border-radius: 0px 0px 3px 3px
+  -webkit-border-radius: 0px 0px 3px 3px
+  background: #f5f7fc
+  border-radius: 0px 0px 3px 3px
+  font-size: 16px
+  padding: 15px 30px 10px 30px
+  position: relative
+  text-align: center
+
+.m-mainwrapper--footer--top
+  -moz-border-radius: 5px 5px 0px 0px
+  -o-border-radius: 5px 5px 0px 0px
+  -webkit-border-radius: 5px 5px 0px 0px
+  background: #e4545b
+  border-radius: 5px 5px 0px 0px
+  height: 65px
+  margin-top: 80px
+  padding-top: 20px
+  text-align: center
+
+.m-footer--container
+  background: rgba(47,52,64,0.8)
+
+.m-footer--title
+  font-size: 18px
+  color: #fff
+  margin-top: 30px
+
+.m-footer--p
+  margin-top: 20px
+  height: 80px
+  color: #979aa1
+  font-size: 13px
+  a
+    display: block
+    color: #fff
+  a:hover
+    text-decoration: none
+    color: #fff
+  .white
+    color: #fff
+
+.btn-block
+  color: #fff
+  font-size: 24px
+  padding: 14px
 
 .vertical
   -webkit-transform: rotate(90deg)
+
+.padding
+  padding: 20px 0 20px 0
+
+.black
+  color: #333
